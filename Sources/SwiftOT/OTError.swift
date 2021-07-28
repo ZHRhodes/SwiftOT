@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum OTError: Error {
+public enum OTError: Error {
   case composeRequiresConsecutiveOps
   case composeEncounteredAShortOpSequence
   case transformRequiresConcurrentOps

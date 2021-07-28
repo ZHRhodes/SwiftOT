@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Doc {
-  var lines = [[UnicodeScalar]]()
-  var size: Int = 0
+public class Doc {
+  public var lines = [[UnicodeScalar]]()
+  public var size: Int = 0
   
-  var cursors: [Cursor] = []
+  public var cursors: [Cursor] = []
   
-  init(s: String) {
+  public init(s: String) {
     var b = s.startIndex
     let newlineScalar = UnicodeScalar(10)!
     for (i, r) in s.enumerated() {
@@ -29,7 +29,7 @@ class Doc {
     lines.append(substr)
   }
   
-  func toString() -> String {
+  public func toString() -> String {
     let joinedScalars = Array(lines.joined(separator: [UnicodeScalar(10)]))
     return String(joinedScalars.map{Character($0)})
   }
@@ -151,7 +151,7 @@ class Doc {
     return newCursors
   }
   
-  func setCursor(id: String, position: Int) {
+  public func setCursor(id: String, position: Int) {
     for (i, cursor) in cursors.enumerated() {
       if cursor.id == id {
         cursors[i].position = position
@@ -161,7 +161,7 @@ class Doc {
     cursors.append(Cursor(id: id, position: position))
   }
   
-  func removeCursor(id: String) {
+  public func removeCursor(id: String) {
     cursors.removeAll(where: { $0.id == id })
   }
 }

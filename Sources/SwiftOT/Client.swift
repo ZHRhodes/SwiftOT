@@ -15,20 +15,20 @@ https://www.aha.io/blog/text-editor
 
 import Foundation
 
-protocol ClientDelegate: AnyObject {
+public protocol ClientDelegate: AnyObject {
   func send(rev: Int, ops: [Op], sender: Client)
 }
 
-class Client {
-  var doc: Doc
-  var rev: Int
+public class Client {
+  public var doc: Doc
+  public var rev: Int
   var buf: [Op]
   var wait: [Op]
   
-  let resourceId: String
-  weak var delegate: ClientDelegate?
+  public let resourceId: String
+  public weak var delegate: ClientDelegate?
   
-  init(doc: Doc, rev: Int, buf: [Op], wait: [Op], resourceId: String) {
+  public init(doc: Doc, rev: Int, buf: [Op], wait: [Op], resourceId: String) {
     self.doc = doc
     self.rev = rev
     self.buf = buf

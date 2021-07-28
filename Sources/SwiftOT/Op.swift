@@ -7,9 +7,9 @@
 
 import Foundation
 
-let cursorScalar = "\u{E000}"
+public let cursorScalar = "\u{E000}"
 
-protocol OpProviding {
+public protocol OpProviding {
   var n: Int { get set }
   var s: String { get set }
 }
@@ -20,43 +20,43 @@ extension OpProviding {
   }
 }
 
-struct Op: Codable, Equatable {
+public struct Op: Codable, Equatable {
   var n: Int
   var s: String
   
-  init(n: Int = 0, s: String = "") {
+  public init(n: Int = 0, s: String = "") {
     self.n = n
     self.s = s
   }
   
-  init(retain: Int) {
+  public init(retain: Int) {
     self.init(n: retain, s: "")
   }
   
-  init(delete: Int) {
+  public init(delete: Int) {
     var delete = delete
     delete.negate()
     self.init(n: delete, s: "")
   }
   
-  init(insert: String) {
+  public init(insert: String) {
     self.init(n: 0, s: insert)
   }
   
-  var isNoop: Bool {
+  public var isNoop: Bool {
     return n == 0 && s.isEmpty
   }
 }
 
-class Cursor {
+public class Cursor {
   var id: String
   var position: Int
   
-  lazy var op: Op = {
+  public lazy var op: Op = {
     return Op(n: 0, s: cursorScalar)
   }()
   
-  init(id: String, position: Int) {
+  public init(id: String, position: Int) {
     self.id = id
     self.position = position
   }
