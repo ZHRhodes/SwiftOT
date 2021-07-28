@@ -9,7 +9,7 @@ I extended the implementation with support for tracking cursors. More explanatio
 
 See [my other repo](https://github.com/ZHRhodes/Whaler-api/blob/master/README.md#ot) for an overview of the algorithm.
 
-### Helpful Resources
+## Helpful Resources
 https://www.aha.io/blog/text-editor
 
 http://operational-transformation.github.io/
