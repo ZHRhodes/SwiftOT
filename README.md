@@ -11,4 +11,5 @@ See [my other repo](https://github.com/ZHRhodes/Whaler-api/blob/master/README.md
 
 ### Helpful Resources
 https://www.aha.io/blog/text-editor
+
 http://operational-transformation.github.io/
