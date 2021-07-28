@@ -1,3 +1,2 @@
 # SwiftOT
-
-A description of this package.
+Operation transform algorithm implemented in Swift
